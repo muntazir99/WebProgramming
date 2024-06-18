@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Events Demonstration</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        .event-box {
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            text-align: center;
+            line-height: 200px;
+            border: 1px solid #000;
+            display: inline-block;
+        }
+        .event-input {
+            display: block;
+            margin: 20px;
+            padding: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Events Demonstration</h1>
+
+    <!-- Click Event -->
+    <div class="event-box" id="clickBox">Click Me!</div>
+
+    <!-- Mouse Over and Out Event -->
+    <div class="event-box" id="hoverBox"> Over Me!</div>
+
+    <!-- Double-Click Event -->
+    <div class="event-box" id="doubleClickBox">Double Click Me!</div>
+
+    <!-- Change Event -->
+    <select id="selectBox" class="event-input">
+        <option value="">Select an option</option>
+        <option value="Option 1">Option 1</option>
+        <option value="Option 2">Option 2</option>
+    </select>
+
+    <!-- Focus Event -->
+    <input type="text" id="focusInput" class="event-input" placeholder="Focus me!">
+
+    <!-- Key Down Event -->
+    <input type="text" id="keyDownInput" class="event-input" placeholder="Type something...">
+
+    <script>
+        // Click Event
+        document.getElementById('clickBox').onclick = function() {
+            alert('Box Clicked!');
+        };
+
+        // Mouse Over and Out Event
+        document.getElementById('hoverBox').onmouseover = function() {
+            this.style.backgroundColor = 'yellow';
+            this.innerHTML = 'Mouse Over!';
+        };
+
+        document.getElementById('hoverBox').onmouseout = function() {
+            this.style.backgroundColor = 'PINK';
+            this.innerHTML = 'Hover Over Me!';
+        };
+
+        // Double-Click Event
+        document.getElementById('doubleClickBox').ondblclick = function() {
+            this.style.backgroundColor = 'green';
+            this.innerHTML = 'Double Clicked!';
+        };
+
+        // Change Event
+        document.getElementById('selectBox').onchange = function() {
+            alert('Selected: ' + this.value);
+        };
+
+        // Focus Event
+        document.getElementById('focusInput').onfocus = function() {
+            this.style.backgroundColor = 'lightblue';
+            this.placeholder = 'Focused!';
+        };
+
+        // Key Down Event
+        document.getElementById('keyDownInput').onkeydown = function(event) {
+            alert('Key pressed: ' + event.key);
+        };
+    </script>
+</body>
+</html>
